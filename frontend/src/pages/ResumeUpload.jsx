@@ -38,6 +38,7 @@ const ResumeUpload = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            
             setResults(response.data);
         } catch (error) {
             console.error('Error uploading resume:', error);
@@ -45,7 +46,6 @@ const ResumeUpload = () => {
             setLoading(false);
         }
     };
-
     // Function to get the color based on score
     const getScoreColor = (score) => {
         if (score < 40) return 'rgba(255, 99, 132, 0.6)'; // Red
@@ -236,7 +236,7 @@ const ResumeUpload = () => {
 
 
                        {/* Job Title Match Section */}
-            {results['JobTitleMatch'] !== undefined && (
+            {results['Job Title Match'] !== undefined && (
                 <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-600 mt-5">
                     <h2 className="text-xl font-semibold text-purple-600 dark:text-purple-300 mb-4 flex items-center">
                         <span className="text-purple-600 dark:text-purple-300 text-2xl mr-2">
